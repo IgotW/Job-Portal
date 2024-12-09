@@ -1,6 +1,4 @@
-﻿@{
-    ViewData["Title"] = "Company Registration";
-}
+﻿@model Company
 
 <div class="container py-5">
     <div class="row justify-content-center">
@@ -8,18 +6,19 @@
             <div class="card shadow">
                 <div class="card-body p-4">
                     <h2 class="text-center mb-4">Company Registration</h2>
-                    <form>
+                    <form method="post">
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label class="form-label">Company Name</label>
-                                    <input type="text" class="form-control" placeholder="Enter company name">
+                                    <label asp-for="CompanyName" class="form-label">Company Name</label>
+                                    <input asp-for="CompanyName" type="text" class="form-control" placeholder="Enter company name">
+                                    <span asp-validation-for="CompanyName" class="text-danger"></span>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label class="form-label">Industry</label>
-                                    <select class="form-select">
+                                    <label asp-for="Industry" class="form-label">Industry</label>
+                                    <select asp-for="Industry" class="form-select">
                                         <option selected disabled>Select industry</option>
                                         <option>Technology</option>
                                         <option>Healthcare</option>
@@ -28,6 +27,7 @@
                                         <option>Manufacturing</option>
                                         <option>Other</option>
                                     </select>
+                                    <span asp-validation-for="Industry" class="text-danger"></span>
                                 </div>
                             </div>
                         </div>
@@ -35,14 +35,16 @@
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label class="form-label">Business Email</label>
-                                    <input type="email" class="form-control" placeholder="Enter business email">
+                                    <label asp-for="Email" class="form-label">Business Email</label>
+                                    <input asp-for="Email" type="email" class="form-control" placeholder="Enter business email">
+                                    <span asp-validation-for="Email" class="text-danger"></span>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label class="form-label">Phone Number</label>
-                                    <input type="tel" class="form-control" placeholder="Enter phone number">
+                                    <label asp-for="Phone" class="form-label">Phone Number</label>
+                                    <input asp-for="Phone" type="tel" class="form-control" placeholder="Enter phone number">
+                                    <span asp-validation-for="Phone" class="text-danger"></span>
                                 </div>
                             </div>
                         </div>
@@ -50,8 +52,9 @@
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label class="form-label">Password</label>
-                                    <input type="password" class="form-control" placeholder="Create password">
+                                    <label asp-for="Password" class="form-label">Password</label>
+                                    <input asp-for="Password" type="password" class="form-control" placeholder="Create password">
+                                    <span asp-validation-for="Password" class="text-danger"></span>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -63,13 +66,15 @@
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">Company Website</label>
-                            <input type="url" class="form-control" placeholder="https://www.example.com">
+                            <label asp-for="CompanyWebsite" class="form-label">Company Website</label>
+                            <input asp-for="CompanyWebsite" type="url" class="form-control" placeholder="https://www.example.com">
+                            <span asp-validation-for="CompanyWebsite" class="text-danger"></span>
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">Company Description</label>
-                            <textarea class="form-control" rows="3" placeholder="Tell us about your company"></textarea>
+                            <label asp-for="CompanyDescription" class="form-label">Company Description</label>
+                            <textarea asp-for="CompanyDescription" class="form-control" rows="3" placeholder="Tell us about your company"></textarea>
+                            <span asp-validation-for="CompanyDescription" class="text-danger"></span>
                         </div>
 
                         <div class="mb-4">
