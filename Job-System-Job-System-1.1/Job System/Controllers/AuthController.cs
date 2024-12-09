@@ -15,6 +15,36 @@ namespace JobPortal.Controllers
         }
         public IActionResult Login()
         {
+
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Login(string email, string password)
+        {
+            // Check for a matching candidate
+            var candidate = _db.Candidates
+                .FirstOrDefault(c => c.Email == email && c.Password == password);
+
+            if (candidate != null)
+            {
+                // Redirect to Candidate Dashboard (or any other view)
+                return RedirectToAction("CandidateDashboard", "Dashboard");
+            }
+
+            // Check for a matching company
+            var company = _db.Companies
+                .FirstOrDefault(c => c.Email == email && c.Password == password);
+
+            if (company != null)
+            {
+                // Redirect to Company Dashboard (or any other view)
+                return RedirectToAction("CompanyDashboard", "Dashboard");
+            }
+
+            // If no match is found, display an error message
+            ViewBag.ErrorMessage = "Invalid email or password.";
             return View();
         }
 
