@@ -1,0 +1,104 @@
+﻿@{
+    ViewData["Title"] = "Candidate Registration";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-body p-4">
+                    <h2 class="text-center mb-4">Candidate Registration</h2>
+                    <form>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">First Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter first name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter last name">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" placeholder="Enter email">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" placeholder="Enter phone number">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Password</label>
+                                    <input type="password" class="form-control" placeholder="Create password">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Confirm Password</label>
+                                    <input type="password" class="form-control" placeholder="Confirm password">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Professional Title</label>
+                            <input type="text" class="form-control" placeholder="e.g., Software Engineer">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Years of Experience</label>
+                            <select class="form-select">
+                                <option selected disabled>Select experience</option>
+                                <option>0-2 years</option>
+                                <option>3-5 years</option>
+                                <option>6-8 years</option>
+                                <option>9+ years</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Professional Summary</label>
+                            <textarea class="form-control" rows="3" placeholder="Brief description of your professional background"></textarea>
+                        </div>
+
+                        <div class="mb-4">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="terms">
+                                <label class="form-check-label" for="terms">
+                                    I agree to the Terms of Service and Privacy Policy
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="d-grid mb-3">
+                            <button type="submit" class="btn btn-success btn-lg">
+                                Create Account
+                            </button>
+                        </div>
+
+                        <div class="text-center">
+                            <p>
+                                Already have an account?
+                                <a asp-controller="Auth" asp-action="Login" class="text-decoration-none">Sign in</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,96 @@
+﻿@{
+    ViewData["Title"] = "Apply for Position";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-body p-4">
+                    <h2 class="text-center mb-4">Job Application</h2>
+                    <form>
+                        <input type="hidden" name="jobId" value="@ViewBag.JobId" />
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">First Name</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Phone</label>
+                                <input type="tel" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Current Job Title</label>
+                            <input type="text" class="form-control">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Years of Experience</label>
+                            <select class="form-select" required>
+                                <option value="">Select experience</option>
+                                <option>Less than 1 year</option>
+                                <option>1-2 years</option>
+                                <option>3-5 years</option>
+                                <option>5-7 years</option>
+                                <option>7+ years</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Resume/CV</label>
+                            <input type="file" class="form-control" accept=".pdf,.doc,.docx" required>
+                            <small class="text-muted">Accepted formats: PDF, DOC, DOCX (Max 5MB)</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Cover Letter</label>
+                            <textarea class="form-control" rows="4" placeholder="Why are you interested in this position?"></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">LinkedIn Profile (Optional)</label>
+                            <input type="url" class="form-control" placeholder="https://linkedin.com/in/username">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Portfolio/Website (Optional)</label>
+                            <input type="url" class="form-control" placeholder="https://yourportfolio.com">
+                        </div>
+
+                        <div class="mb-4">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" required>
+                                <label class="form-check-label">
+                                    I certify that all information provided is accurate and complete
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                Submit Application
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary" onclick="history.back()">
+                                Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

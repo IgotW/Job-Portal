@@ -1,0 +1,99 @@
+﻿@model IEnumerable<JobPortal.Models.Job>
+@{
+    ViewData["Title"] = "Jobs";
+}
+
+<div class="container py-5">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">Search Jobs</h5>
+                    <form class="row g-3">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="form-label">Keywords</label>
+                                <input type="search" class="form-control" placeholder="Job title or keywords">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="form-label">Location</label>
+                                <select class="form-select">
+                                    <option value="">All Locations</option>
+                                    <option>New York, NY</option>
+                                    <option>San Francisco, CA</option>
+                                    <option>Austin, TX</option>
+                                    <option>Remote</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="form-label">Category</label>
+                                <select class="form-select">
+                                    <option value="">All Categories</option>
+                                    <option>Software Development</option>
+                                    <option>Design</option>
+                                    <option>Marketing</option>
+                                    <option>Sales</option>
+                                    <option>Customer Service</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="form-label">Company</label>
+                                <select class="form-select">
+                                    <option value="">All Companies</option>
+                                    <option>Tech Corp</option>
+                                    <option>Design Studio</option>
+                                    <option>Innovation Inc</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="d-flex gap-2">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="bi bi-search"></i> Search
+                                </button>
+                                <button type="reset" class="btn btn-outline-secondary">
+                                    <i class="bi bi-x-circle"></i> Clear Filters
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        @foreach (var job in Model)
+        {
+            <div class="col-12">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h5 class="card-title">@job.Title</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">
+                                    @job.Company • @job.Location
+                                </h6>
+                            </div>
+                            <a href="#" class="btn btn-primary">Apply Now</a>
+                        </div>
+
+                        <div class="mb-2">
+                            <span class="badge bg-success me-2">@job.Type</span>
+                            <span class="badge bg-info">@job.Salary</span>
+                        </div>
+
+                        <p class="card-text">@job.Description</p>
+                        <small class="text-muted">Posted @job.PostedDate.ToString("MMM dd, yyyy")</small>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

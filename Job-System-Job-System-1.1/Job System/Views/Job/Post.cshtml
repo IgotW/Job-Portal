@@ -1,0 +1,90 @@
+﻿@{
+    ViewData["Title"] = "Post a Job";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-body p-4">
+                    <h2 class="text-center mb-4">Post a New Job</h2>
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Job Title</label>
+                            <input type="text" class="form-control" placeholder="e.g., Senior Software Engineer">
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Job Type</label>
+                                <select class="form-select">
+                                    <option selected disabled>Select job type</option>
+                                    <option>Full-time</option>
+                                    <option>Part-time</option>
+                                    <option>Contract</option>
+                                    <option>Internship</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Location</label>
+                                <select class="form-select">
+                                    <option selected disabled>Select location type</option>
+                                    <option>On-site</option>
+                                    <option>Remote</option>
+                                    <option>Hybrid</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Salary Range (From)</label>
+                                <input type="number" class="form-control" placeholder="Minimum salary">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Salary Range (To)</label>
+                                <input type="number" class="form-control" placeholder="Maximum salary">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Required Experience (Years)</label>
+                            <select class="form-select">
+                                <option selected disabled>Select experience required</option>
+                                <option>Entry Level (0-2 years)</option>
+                                <option>Mid Level (3-5 years)</option>
+                                <option>Senior Level (5-8 years)</option>
+                                <option>Expert Level (8+ years)</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Required Skills</label>
+                            <input type="text" class="form-control" placeholder="e.g., JavaScript, React, Node.js">
+                            <small class="text-muted">Separate skills with commas</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Job Description</label>
+                            <textarea class="form-control" rows="5" placeholder="Describe the job role, responsibilities, and requirements"></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Benefits</label>
+                            <textarea class="form-control" rows="3" placeholder="List the benefits and perks"></textarea>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                Post Job
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary">
+                                Save as Draft
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

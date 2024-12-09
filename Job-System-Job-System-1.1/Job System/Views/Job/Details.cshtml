@@ -1,0 +1,82 @@
+﻿@model JobPortal.Models.Job
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h1 class="h2 mb-2">@Model.Title</h1>
+                            <h6 class="text-muted">@Model.Company • @Model.Location</h6>
+                        </div>
+                        <img src="https://via.placeholder.com/64" class="rounded" alt="Company Logo">
+                    </div>
+
+                    <div class="mb-4">
+                        <span class="badge bg-success me-2">@Model.Type</span>
+                        <span class="badge bg-primary me-2">@Model.Salary</span>
+                        <span class="badge bg-secondary">Posted @Model.PostedDate.ToString("MMM dd, yyyy")</span>
+                    </div>
+
+                    <h5>Job Description</h5>
+                    <p>@Model.Description</p>
+
+                    <h5>Requirements</h5>
+                    <ul>
+                        <li>5+ years of experience in software development</li>
+                        <li>Strong proficiency in JavaScript, React, and Node.js</li>
+                        <li>Experience with cloud platforms (AWS, Azure, or GCP)</li>
+                        <li>Excellent problem-solving and communication skills</li>
+                    </ul>
+
+                    <h5>Benefits</h5>
+                    <ul>
+                        <li>Competitive salary and equity package</li>
+                        <li>Health, dental, and vision insurance</li>
+                        <li>Flexible work hours and remote options</li>
+                        <li>Professional development budget</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">About @Model.Company</h5>
+                    <p>Tech Corp is a leading technology company specializing in innovative software solutions. We're on a mission to transform how businesses operate through cutting-edge technology.</p>
+
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <p class="mb-1"><strong>Industry:</strong> Technology</p>
+                            <p class="mb-1"><strong>Company Size:</strong> 500-1000 employees</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="mb-1"><strong>Founded:</strong> 2010</p>
+                            <p class="mb-1"><strong>Website:</strong> www.techcorp.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">Apply for this position</h5>
+                    <p class="text-muted mb-4">Take the next step in your career journey.</p>
+                    <div class="d-grid gap-2">
+                        <a asp-action="Apply" asp-route-id="@Model.Id" class="btn btn-primary btn-lg">
+                            Apply Now
+                        </a>
+                        <button type="button" class="btn btn-outline-primary">
+                            Save Job
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

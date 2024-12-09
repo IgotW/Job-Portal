@@ -1,0 +1,107 @@
+﻿@{
+    ViewData["Title"] = "Candidate Profile";
+}
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card shadow mb-4">
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <img src="https://via.placeholder.com/150" class="rounded-circle" alt="Profile Picture">
+                    </div>
+                    <h4 class="card-title">John Doe</h4>
+                    <p class="text-muted">Senior Software Engineer</p>
+                    <div class="d-grid">
+                        <button class="btn btn-outline-primary">
+                            <i class="bi bi-pencil"></i> Edit Profile
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Contact Information</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="bi bi-envelope me-2"></i> john.doe@example.com
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-phone me-2"></i> (555) 123-4567
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-geo-alt me-2"></i> New York, NY
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="card shadow mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Professional Summary</h5>
+                    <p>Experienced software engineer with a strong background in web development and a passion for creating efficient, scalable solutions.</p>
+                </div>
+            </div>
+
+            <div class="card shadow mb-4">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="card-title mb-0">Experience</h5>
+                        <button class="btn btn-sm btn-outline-primary">
+                            <i class="bi bi-plus"></i> Add
+                        </button>
+                    </div>
+                    <div class="timeline">
+                        <div class="mb-3">
+                            <h6>Senior Software Engineer</h6>
+                            <p class="text-muted mb-1">Tech Corp • 2020 - Present</p>
+                            <p>Led development of multiple web applications using React and Node.js.</p>
+                        </div>
+                        <div class="mb-3">
+                            <h6>Software Engineer</h6>
+                            <p class="text-muted mb-1">Dev Solutions • 2018 - 2020</p>
+                            <p>Developed and maintained client websites and applications.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card shadow mb-4">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="card-title mb-0">Education</h5>
+                        <button class="btn btn-sm btn-outline-primary">
+                            <i class="bi bi-plus"></i> Add
+                        </button>
+                    </div>
+                    <div class="mb-3">
+                        <h6>Bachelor of Science in Computer Science</h6>
+                        <p class="text-muted">University of Technology • 2014 - 2018</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card shadow">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="card-title mb-0">Skills</h5>
+                        <button class="btn btn-sm btn-outline-primary">
+                            <i class="bi bi-plus"></i> Add
+                        </button>
+                    </div>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge bg-primary">JavaScript</span>
+                        <span class="badge bg-primary">React</span>
+                        <span class="badge bg-primary">Node.js</span>
+                        <span class="badge bg-primary">Python</span>
+                        <span class="badge bg-primary">SQL</span>
+                        <span class="badge bg-primary">Git</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
