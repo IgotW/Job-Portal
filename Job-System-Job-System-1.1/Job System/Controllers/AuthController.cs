@@ -15,6 +15,45 @@ namespace JobPortal.Controllers
         }
         public IActionResult Login()
         {
+<<<<<<< Updated upstream
+=======
+
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Login(string email, string password)
+        {
+            // Check for a Candidate
+            var candidate = _db.Candidates
+                .FirstOrDefault(c => c.Email == email && c.Password == password);
+
+            if (candidate != null && candidate.Role == "Candidate")
+            {
+                // Store role in session
+                //HttpContext.Session.SetString("UserRole", "Candidate");
+
+                // Redirect to Candidate Dashboard
+                return RedirectToAction("CandidateDashboard", "Dashboard");
+            }
+
+            // Check for a Company
+            var company = _db.Companies
+                .FirstOrDefault(c => c.Email == email && c.Password == password);
+
+            if (company != null && company.Role == "Company")
+            {
+                // Store role in session
+                //HttpContext.Session.SetString("UserRole", "Company");
+
+                // Redirect to Company Dashboard
+                return RedirectToAction("CompanyDashboard", "Dashboard");
+            }
+
+            // If no match is found, display an error message
+            ViewBag.ErrorMessage = "Invalid email or password.";
+>>>>>>> Stashed changes
             return View();
         }
 
@@ -56,5 +95,21 @@ namespace JobPortal.Controllers
             }
             return View(obj);
         }
+        //public IActionResult CandidateDashboard()
+        //{
+        //    if (HttpContext.Session.GetString("UserRole") != "Candidate")
+        //    {
+        //        return RedirectToAction("Login", "Auth");
+        //    }
+        //    return View();
+        //}
+        //public IActionResult CompanyDashboard()
+        //{
+        //    if (HttpContext.Session.GetString("UserRole") != "Company")
+        //    {
+        //        return RedirectToAction("Login", "Auth");
+        //    }
+        //    return View();
+        //}
     }
 }
